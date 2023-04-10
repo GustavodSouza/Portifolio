@@ -13,7 +13,7 @@ const projetos = [
     {
         titulo: 'Tasks React',
         github: 'https://github.com/GustavodSouza/Tasks-react.git',
-        site: 'tasks-react-gustavo.vercel.app',
+        site: 'https://tasks-react-gustavo.vercel.app',
         img: './img/tasks-react.png',
         descricao: 'Projeto realizado com a finalidade de aprender React e armazenar uma lista de tarefas, sendo possível marcar como feita.'
         + 'Neste projeto é possível realizar um CRUD.',
