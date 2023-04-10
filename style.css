@@ -189,12 +189,13 @@ p {
     width: 50%;
     height: 50%;
     overflow: auto;
-    background-color: #d8d8d8;
+    background-color: rgb(244, 244, 244);
     top: 100px;
     padding: 1%;
     left: 50%;
     transform: translate(-50%, 0);
     border-radius: 20px;
+    box-shadow: 1px 4px 10px 2px black;
 }
 
 .titulo-fechar {
