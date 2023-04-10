@@ -146,9 +146,9 @@ p {
 }
 
 .wrapper {
-    display: flex;
-    gap: 20px;
-    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 30px;
 }
 
 .wrapper > div {
@@ -156,24 +156,21 @@ p {
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
-    background-color: #445964;
     width: 100%;
+    height: 100%;
     border-radius: 15px;
-    max-height: 30%;
-    height: auto;
     box-shadow: 2px 3px 10px 2px #000;
-    padding: 10px;
     transition: 0.3s ease-in-out;
 }
 
-.card h1,
-.card h4,
-.card p {
-    color: #fff !important;
+.wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
 }
 
-.wrapper > div:hover {
-    box-shadow: none;
+.wrapper > div:hover *:not(.button-card, .titulo-card) {
+    filter: blur(3px);
 }
 
 .botoes-cards > button {
@@ -183,4 +180,82 @@ p {
     height: 35px;
     width: 150px;
     border-radius: 10px;
+}
+
+.modal {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    background-color: #d8d8d8;
+    top: 100px;
+    padding: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 20px;
+}
+
+.titulo-fechar {
+    display: flex;
+    width: 100%;
+}
+
+.titulo-modal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+}
+
+.card .button-card {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    z-index: 1;
+    bottom: 10px;
+    width: 9rem;
+    height: 2.2em;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 4px 10px 2px black;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card:hover .button-card,
+.card:hover .titulo-card {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card::after {
+    content: '';
+    height: 6px;
+    position: absolute;
+    background: rgb(86, 86, 206);
+    width: 45px;
+    top: -0.8em;
+    left: 0.1em;
+    border-radius: 20px;
+}
+
+.card .titulo-card {
+    position: absolute;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 0;
+    z-index: 1;
+    width: 9rem;
+    height: 2.2em;
+    text-align: center;
+    width: 100%;
 }

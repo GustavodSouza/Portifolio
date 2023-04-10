@@ -5,11 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
-    <title>Gustavo Lima</title>
+    <script src="./script.js" defer></script>
+    <title>Gustavo de Souza Lima</title>
 </head>
 <body>
     <div class="container">
+        <div id="modal" class="modal">
+            <div class="titulo-fechar">
+                <div class="titulo-modal">
+                    <h1 id="titulo-modal"></h1>
+                </div>
+                <div>
+                    <button onclick="closeModal()">X</button>
+                </div>
+            </div>
+            <div class="container">
+                <h3>Descrição: </h3>
+                <h4 id="descricao-modal"></h4>
+                <h3>Tecnologia(s)/Techs:</h3>
+                <h4 id="tecnologias-modal"></h4>
+                <button id="button-visitar" onclick="openLink(this.value)">Visitar</button>
+                <button id="button-repositorio" onclick="openLink(this.value)">Código Fonte</button>
+            </div>
+        </div>
         <section class="section-1">
             <nav>
                 <div class="nome-titulo">
@@ -49,7 +67,7 @@
             <div class="sobre">
                 <div>
                     <span class="nome">Gustavo de Souza de Lima</span>
-                    <p>Meu nome é Gustavo de Souza de Lima, tenho 25 anos e sou <b>formado em Tecnologia em Sistemas para Internet na Universidade Federal de Santa Maria (UFSM)</b>. 
+                    <p>Meu nome é Gustavo de Souza de Lima, tenho 26 anos e sou <b>formado em Tecnologia em Sistemas para Internet na Universidade Federal de Santa Maria (UFSM)</b>. 
                     Sou entusiasta pelo que faço e pela tecnologia, sempre busco conhecimento e evolução constantes. 
                     Sou um profissional com 3 anos de experiência no mercado de trabalho voltado para o desenvolvimento Web utilizando boas práticas de programação e diversas soluções para corrigir problemas.
                     Nestes 3 anos tive a oportunidade de trabalhar em projetos da Telefonica Vivo, nas quais me desenvolvi profissionalmente, construindo projetos do zero e dando manutenções me sistemas legados.
@@ -76,23 +94,10 @@
                     <h1>Meu portifólio</h1>
                 </div>
                 <div>
-                    <h2>Estes são alguns projetos construído no decorrer da minha carreira como Dev</h2>
+                    <h2>Estes são alguns projetos construídos no decorrer da minha carreira como Dev</h2>
                 </div>
             </div>
-            <div class="wrapper">
-                <div class="card">
-                    <h1>MeusGastos</h1>
-                    <p>Sistema para controle de gastos mensais</p>
-                    <div class="botoes-cards">
-                        <button onclick="openLink('https://meus-gastos.vercel.app/')">Visitar</button>
-                        <button onclick="openLink('https://github.com/GustavodSouza/MeusGastos')">Código Fonte</button>
-                    </div>
-                    <h4>Tecnologias/Techs: Angular - Typescript - Firebase</h4>
-                </div>
-                <div>
-                </div>
-            </div>
-            </div>
+            <div id="wrapper" class="wrapper"></div>
         </section>
         <hr>
         <section id="habilidades">
