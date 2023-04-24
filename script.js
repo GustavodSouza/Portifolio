@@ -1,76 +1,109 @@
-const projetos = [
-    {
+ const projetos = [
+     {
+         titulo: 'Meus Gastos',
+         github: 'https://github.com/GustavodSouza/MeusGastos',
+         site: 'https://meus-gastos.vercel.app/',
+         img: './img/meus-gastos.png',
+         descricao: 'Projeto pessoal desenvolvido para controlar os gastos mensais e gerar relatórios mensais',
+         tecnologias: 'Angular - Typescript - PWA - Sass - Firebase'
+     },
+     {
+         titulo: 'Tasks React',
+         github: 'https://github.com/GustavodSouza/Tasks-react.git',
+         site: 'https://tasks-react-gustavo.vercel.app',
+         img: './img/tasks-react.png',
+         descricao: 'Projeto realizado com a finalidade de aprender React e armazenar uma lista de tarefas, sendo possível marcar como feita.'
+         + 'Neste projeto é possível realizar um CRUD.',
+         tecnologias: 'React - Javascript'
+     },
+     {
+         titulo: 'Teste',
+         github: 'https://github.com/GustavodSouza/Tasks-react.git',
+         site: '#',
+         img: '#',
+         descricao: 'Aqui será os próximos projetos',
+         tecnologias: 'Em alguma linguagem qualquer'
+     },
+     {
         titulo: 'Meus Gastos',
         github: 'https://github.com/GustavodSouza/MeusGastos',
         site: 'https://meus-gastos.vercel.app/',
         img: './img/meus-gastos.png',
-        descricao: 'Este é meu principal projeto no momento, desenvolvido a partir de uma necessidade minha '
-        + 'de armazenar meus gastos mensais e obter o total de gastos a fim de aumentar minhas economias. O projeto foi desenvolvido utilizando Angular '
-        + 'junto ao Firebase como banco de dados. O sistema conta com PWA o que permite instalar na sua máquina ou celular pessoal, facilitando seu acesso.'
-        + 'O projeto ainda está sendo aprimorado.',
+        descricao: 'Projeto pessoal desenvolvido para controlar os gastos mensais e gerar relatórios mensais',
         tecnologias: 'Angular - Typescript - PWA - Sass - Firebase'
     },
-    {
-        titulo: 'Tasks React',
-        github: 'https://github.com/GustavodSouza/Tasks-react.git',
-        site: 'https://tasks-react-gustavo.vercel.app',
-        img: './img/tasks-react.png',
-        descricao: 'Projeto realizado com a finalidade de aprender React e armazenar uma lista de tarefas, sendo possível marcar como feita.'
-        + 'Neste projeto é possível realizar um CRUD.',
-        tecnologias: 'React - Javascript'
-    },
-    {
-        titulo: 'Teste',
-        github: 'https://github.com/GustavodSouza/Tasks-react.git',
-        site: '#',
-        img: '#',
-        descricao: 'Aqui será os próximos projetos',
-        tecnologias: 'Em alguma linguagem qualquer'
-    }
 ];
 
-const wrapper = document.getElementById('wrapper');
+const card = document.getElementById('projetos-position');
+
+let contador = 0;
 
 projetos.forEach((item) => {
-    let html = `
-        <div class='card'>
-            <img src='${item.img}' />
-            <h1 class="titulo-card">${item.titulo}</h1>
-            <button class='button-card' onclick='openModal(${JSON.stringify(item)})'>Mais detalhes</button>
-        </div>
-    `;
+    contador++;
+    let projeto = '';
+    let isPar = (contador % 2 == 0);
+    let display = (contador > 2) ? 'hidden' : 'show';
 
-    wrapper.innerHTML += html;
+    if (isPar) {
+        projeto = `
+        <div class="card card-right ${display}">
+            <div class="projetos-descricao-right">
+                <h1>${item.titulo}</h1>
+                <p>${item.descricao}</p>
+                <p class="bold">${item.tecnologias}</p>
+                <div class="botoes-projeto">
+                    <img src="./img/visitar.png" alt="Visualizar projeto" onclick='openLink(${JSON.stringify(item.site)})' />
+                    <img src="./img/repositorio.png" alt="Abrir repositório do projeto" onclick='openLink(${JSON.stringify(item.github)})' />
+                </div>
+            </div>
+            <div class="projetos-img">
+                <img src="${item.img}" alt="" />
+            </div>
+        </div>`;
+    } else {
+        projeto = `
+        <div class="card card-left ${display}">
+            <div class="projetos-img">
+                <img src="${item.img}" alt="" />
+            </div>
+            <div class="projetos-descricao-left">
+                <h1>${item.titulo}</h1>
+                <p>${item.descricao}</p>
+                <p class="bold">${item.tecnologias}</p>
+                <div class="botoes-projeto">
+                    <img src="./img/visitar.png" alt="Visualizar projeto" onclick='openLink(${JSON.stringify(item.site)})' />
+                    <img src="./img/repositorio.png" alt="Abrir repositório do projeto" onclick='openLink(${JSON.stringify(item.github)})' />
+                </div>
+            </div>
+        </div>`;
+    }
+
+    card.innerHTML += projeto;
 });
 
+
 openLink = (url) => {
+    console.log(url);
     window.open(url, '_blank');
 }
 
-let click = false;
-openModal = (projeto) => {
-    click = !click;
-    
-    if (click) {
-        document.getElementById('titulo-modal').innerText = projeto.titulo;
-        document.getElementById('descricao-modal').innerText = projeto.descricao;
-        document.getElementById('tecnologias-modal').innerText = projeto.tecnologias;
-        document.getElementById('button-visitar').setAttribute('value', projeto.site);
-        document.getElementById('button-repositorio').setAttribute('value', projeto.github);
-        document.getElementById('modal').style = "display: block";
+addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        document.getElementById('botao-topo').style = 'visibility: visible';
     } else {
-        closeModal();
+        document.getElementById('botao-topo').style = 'visibility: hidden';
     }
-}
+});
 
-// window.onclick = function(event) {
-//     const button = document.querySelector('.button-card');
-//     if (event.target != button) {
-//         closeModal();
-//     }
-// }
+let click = false;
+verMaisProjetos = () => {
+    click = !click;
 
-closeModal = () => {
-    document.getElementById('modal').style = "display: none";
-    click = false;
+    let elems = document.querySelectorAll('.hidden');
+
+    for (let i = 0; i < elems.length; i++) {
+        elems[i].style.display = click ? "flex" : 'none';
+    }
+
+    document.getElementById('botao-ver-mais').textContent = click ? 'Ver menos' : 'Ver mais';
 }
