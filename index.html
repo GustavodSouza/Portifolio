@@ -29,8 +29,7 @@
             </div>
         </div> -->
         <a href="#">
-            <!-- <button id="botao-topo" class="botao-topo"></button> -->
-            <img id="botao-topo" class="botao-topo" src="./img/seta-para-cima.png" alt="">
+            <img id="botao-topo" class="botao-topo pulse" src="./img/seta-para-cima.png" alt="">
         </a>
         <section class="section-1">
             <nav>
@@ -41,41 +40,20 @@
                 <ul>
                     <li><a href="#sobre">Sobre mim</a></li>
                     <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
                     <li><a href="#experiencia">Experiência</a></li>
                 </ul>
             </nav>
-            <!-- <div class="container-secundario">
-                <div class="container-informacoes">
-                    <div class="informacoes">
-                        <span>Olá pessoas</span>
-                        <span class="span-largo">EU SOU UM PROGRAMADOR WEB</span>
-                        <span>Seja bem vindo(a) ao meu portifólio</span>
-                    </div>
-                    <div class="container-img">
-                        <img src="./img/art.svg" alt="Art ilustrativa">
-                    </div>
-                </div>
-                <div class="botoes-section-1">
-                    <a href="#sobre">Saiba mais sobre mim</a>
-                    <div class="midias-sociais">
-                        <img src="./img/Instagram.svg" alt="Instagram" onclick="openLink('https://www.instagram.com/gustavo.souza997/')">
-                        <img src="./img/Linkedin.svg" alt="LinkedIn" onclick="openLink('https://www.linkedin.com/in/gustavo-de-souza-de-lima-084024b4')">
-                        <img src="./img/Git.svg" alt="Git" onclick="openLink('https://github.com/GustavodSouza')">
-                    </div>
-                </div>
-            </div> -->
             <div class="container-secundario">
                 <div class="sub-container">
                     <div class="enfeite-esquerdo"></div>
                     <div class="informacoes">
                         <div class="img-usuario">
-                            <img src="./img/perfil.jpg" alt="">
+                            <img src="./img/perfil.jpg" alt="" loading="lazy" />
                         </div>
                         <div class="informacoes-usuario">
                             <h2>Olá pessoas!</h2>
-                            <h1>Sou Desenvolvedor Web</h1>
-                            <h4>Seja bem vinda(o) ao meu portifólio</h4>
+                            <h1>Sou <span class="texto"></span><span class="cursor">&nbsp;</span></h1>
+                            <h4>Seja bem vinda(o) ao meu portifólio.</h4>
                             <div class="botoes-perfil">
                                 <a href="#sobre"><button>Mais sobre mim</button></a>
                                 <a href="#projetos"><button>Projetos</button></a>
@@ -84,9 +62,9 @@
                     </div>
                     <div>
                         <div class="midias-sociais">
-                            <img data-tooltip="Instagram" class="instagram" src="./img/instagram.png" alt="Instagram" onclick="openLink('https://www.instagram.com/gustavo.souza997/')">
-                            <img src="./img/linkedin.png" alt="LinkedIn" onclick="openLink('https://www.linkedin.com/in/gustavo-de-souza-de-lima-084024b4')">
-                            <img src="./img/github.png" alt="Git" onclick="openLink('https://github.com/GustavodSouza')">
+                            <a href="https://www.instagram.com/gustavo.souza997/" target="_blank" rel="noopener noreferrer"><img class="instagram" src="./img/midias-sociais/instagram.png" alt="Instagram" loading="lazy" /></a>
+                            <a href="https://www.linkedin.com/in/gustavo-de-souza-de-lima-084024b4" target="_blank" rel="noopener noreferrer"><img src="./img/midias-sociais/linkedin.png" alt="LinkedIn" loading="lazy" /></a>
+                            <a href="https://github.com/GustavodSouza" target="_blank" rel="noopener noreferrer"><img src="./img/midias-sociais/github.png" alt="Git" loading="lazy" /></a>
                         </div>
                     </div>
                     <div class="enfeite-direito"></div>
@@ -100,22 +78,25 @@
                     <span class="nome">Gustavo de Souza de Lima</span>
                     <p>Olá, meu nome é Gustavo, tenho 26 anos e sou <b>formado em Tecnologia em Sistemas para Internet na Universidade Federal de Santa Maria (UFSM)</b>. 
                     Sou entusiasta pelo que faço e pela tecnologia, sempre busco conhecimento e evolução constantes. 
-                    Sou desenvolvedor de sistema com 3 anos de experiência no mercado de trabalho voltado para o desenvolvimento Web utilizando boas práticas de programação e diversas soluções para corrigir problemas.
+                    Sou desenvolvedor com 3 anos de experiência no mercado de trabalho voltado para o desenvolvimento Web utilizando boas práticas de programação e diversas soluções para corrigir problemas.
                     Nestes 3 anos tive a oportunidade de trabalhar em projetos da Telefonica Vivo, nas quais me desenvolvi profissionalmente, construindo projetos do zero e dando manutenções em sistemas legados.
-                    Atualmente trabalho em sustentação em projeto como o Pró Consumidor do Ministério da Justiça, o que me permitiu elevar meu nível de maturidade, conhecimentos e seriedade.
-                    Meus conhecimentos abrangem: <b>Html, Css, Javascript, Typescript, SQL, Java, Spring Boot, Angular, Vue e Scrum</b>, com interesse em aprender também <b>React</b> e elevar meus conhecimentos na parte de Back-end.
+                    Atualmente trabalho no projeto do Pró Consumidor do Ministério da Justiça, o que me permitiu elevar meu nível de maturidade, conhecimentos e seriedade em meu trabalho.
+                    Meus conhecimentos abrangem: <b>Html, Css, Javascript, Typescript, SQL, Spring Boot, Angular, Vue e Scrum</b>, com interesse em aprender também <b>React</b> e elevar meus conhecimentos em <b>Java</b>.
                     </p>
                 </div>
-                <!-- <div>
-                    <div class="contato-info">
-                        <h3>Email: </h3>
-                        <h4>gustavosouza501@gmail.com</h4>
+                <div class="hard-skills">
+                    <span class="nome">Hard Skills</span>
+                    <div class="icones-hard-skills">
+                        <div class="code-tag"><span><</span></div>
+                        <img src="./img/hard-skills/angular.png" alt="Angular" />
+                        <img src="./img/hard-skills/typescript.png" alt="Typescript" />
+                        <img src="./img/hard-skills/html.png" alt="Html" />
+                        <img src="./img/hard-skills/css.png" alt="Css" />
+                        <img src="./img/hard-skills/javascript.png" alt="Javascript" />
+                        <img src="./img/hard-skills/java.png" alt="Java" />
+                        <div class="code-tag"><span>/></span></div>
                     </div>
-                    <div class="contato-info">
-                        <h3>Celular/Whatsapp: </h3>
-                        <h4>(+55) 55 99137-6971</h4>
-                    </div>
-                </div> -->
+                </div>
             </div>
         </section>
         <hr>
@@ -125,19 +106,18 @@
                     <h1>Projetos</h1>
                 </div>
             </div>
+            <div class="filtro">
+                <input type="text" id="clrinput" placeholder="Filtre por tecnologia"/>
+            </div>
             <div id="projetos-position" class="projetos-position"></div>
-            <div class="botao-ver-mais">
+            <div id="div-botao-ver-mais" class="botao-ver-mais">
                 <button id="botao-ver-mais" onclick="verMaisProjetos()">Ver mais</button>
             </div>
-        </section>
-        <!-- <hr>
-        <section id="habilidades">
-            <h1>Habilidades</h1>
         </section>
         <hr>
         <section id="experiencia">
             <h1>Experiência</h1> 
-        </section> -->
+        </section>
     </div>
 </body>
 </html>
