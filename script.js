@@ -27,10 +27,12 @@ let projetos = [
 ];
 
 let click = false;
+let clickMode = false;
 let contador = 0;
 let input = document.getElementById("clrinput");
 let textArrayIndex = 0;
 let charIndex = 0;
+let botaoTopo = document.getElementById("botao-topo");
 const textoSpan = document.querySelector(".texto");
 const cursorSpan = document.querySelector(".cursor");
 const textArray = [
@@ -44,10 +46,10 @@ const erasingDelay = 50;
 const newTextDelay = 2000;
 const card = document.getElementById("projetos-position");
 
-
 carregarProjetos = (filtrados) => {
   let data = !filtrados ? projetos : filtrados;
-  document.getElementById('div-botao-ver-mais').style = data.length > 2 ? 'display: flex' : 'display: none';
+  document.getElementById("div-botao-ver-mais").style =
+    data.length > 2 ? "display: flex" : "display: none";
   data.forEach((item) => {
     contador++;
     let projeto = "";
@@ -96,28 +98,27 @@ carregarProjetos();
 
 addEventListener("scroll", () => {
   if (window.scrollY > 80) {
-    document.getElementById("botao-topo").style = "visibility: visible";
+    botaoTopo.style = "visibility: visible";
   } else {
-    document.getElementById("botao-topo").style = "visibility: hidden";
+    botaoTopo.style = "visibility: hidden";
   }
 });
-
 
 input.addEventListener("input", () => {
   contador = 0;
   card.innerHTML = "";
   if (input.value) {
     click = false;
-    document.getElementById("botao-ver-mais").textContent = 'Ver mais';
+    document.getElementById("botao-ver-mais").textContent = "Ver mais";
     let filtrados = projetos.filter(
-      (item) => item.tecnologias.toLowerCase().indexOf(input.value.toLowerCase()) > -1
+      (item) =>
+        item.tecnologias.toLowerCase().indexOf(input.value.toLowerCase()) > -1
     );
     carregarProjetos(filtrados);
   } else {
     carregarProjetos();
   }
 });
-
 
 verMaisProjetos = () => {
   click = !click;
@@ -169,3 +170,25 @@ apagarTexto = () => {
 document.addEventListener("DOMContentLoaded", function () {
   if (textArray.length) setTimeout(escreverTexto, newTextDelay + 250);
 });
+
+themeMode = () => {
+  clickMode = !clickMode;
+  const html = document.getElementsByTagName("html");
+  const imgModo = document.getElementById("modo");
+  const themeMode = document.querySelectorAll('.theme-mode');
+
+  if (clickMode) {
+    html[0].style = "background-color: var(--dark-mode); color: var(--branco)";
+    imgModo.setAttribute("src", "./img/light-mode.png");
+    botaoTopo.setAttribute('src', './img/seta-light.png');
+
+    for (let i = 0; i < themeMode.length; i++) {
+      themeMode[i].style.color = 'color: var(--branco);';
+    }
+
+  } else {
+    html[0].style = "background-color: var(--branco); color: var(--secundario)";
+    imgModo.setAttribute("src", "./img/dark-mode.png");
+    botaoTopo.setAttribute('src', './img/seta-dark.png');
+  }
+};

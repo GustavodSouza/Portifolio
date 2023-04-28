@@ -1,18 +1,20 @@
 :root {
   --primario: #445964;
-  --secundario: rgb(24, 33, 83);
+  --secundario: rgb(25, 34, 86);
   --branco: #fff;
   --cinza: gray;
   --preto: #000;
+  --dark-mode: #1e1a1a;
 }
 
 * {
   font-family: sans-serif;
-  color: var(--primario);
 }
 
 html {
   scroll-behavior: smooth;
+  color: var(--primario);
+  transition: all 0.8s ease-in-out;
 }
 
 a {
@@ -83,6 +85,18 @@ ul > li > a:hover::after {
 
 .nome-titulo .icone {
   width: 15%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+
+.menu > .modo > img {
+  width: 40px;
+  cursor: pointer;
 }
 
 .botao-topo {
@@ -160,6 +174,10 @@ ul > li > a:hover::after {
 
 .informacoes-usuario > .botoes-perfil {
   margin-top: 20%;
+}
+
+a {
+  color: var(--secundario);
 }
 
 .informacoes-usuario > .botoes-perfil > a > button {

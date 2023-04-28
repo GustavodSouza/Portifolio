@@ -29,19 +29,26 @@
             </div>
         </div> -->
         <a href="#">
-            <img id="botao-topo" class="botao-topo pulse" src="./img/seta-para-cima.png" alt="">
+            <img id="botao-topo" class="botao-topo pulse" src="./img/seta-dark.png" alt="Voltar para o topo" loading="lazy" />
         </a>
         <section class="section-1">
             <nav>
                 <div class="nome-titulo">
-                    <img class="icone" src="./img/icon.svg" alt="Icone" />
+                    <img class="icone" src="./img/icon.svg" alt="Icone" loading="lazy" />
                     <h2>Gustavo de Souza</h2>
                 </div>
-                <ul>
-                    <li><a href="#sobre">Sobre mim</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#experiencia">Experiência</a></li>
-                </ul>
+                <div class="menu">
+                    <div class="opcoes">
+                        <ul>
+                            <li><a class="theme-mode" href="#sobre">Sobre mim</a></li>
+                            <li><a class="theme-mode" href="#projetos">Projetos</a></li>
+                            <li><a class="theme-mode" href="#experiencia">Experiência</a></li>
+                        </ul>
+                    </div>
+                    <div class="modo">
+                        <img id="modo" onclick="themeMode()" src="./img/dark-mode.png" alt="Modo noturno" />
+                    </div>
+                </div>
             </nav>
             <div class="container-secundario">
                 <div class="sub-container">
@@ -87,14 +94,14 @@
                 <div class="hard-skills">
                     <span class="nome">Hard Skills</span>
                     <div class="icones-hard-skills">
-                        <div class="code-tag"><span><</span></div>
+                        <div class="code-tag"><span class="theme-mode"><</span></div>
                         <img src="./img/hard-skills/angular.png" alt="Angular" />
                         <img src="./img/hard-skills/typescript.png" alt="Typescript" />
                         <img src="./img/hard-skills/html.png" alt="Html" />
                         <img src="./img/hard-skills/css.png" alt="Css" />
                         <img src="./img/hard-skills/javascript.png" alt="Javascript" />
                         <img src="./img/hard-skills/java.png" alt="Java" />
-                        <div class="code-tag"><span>/></span></div>
+                        <div class="code-tag"><span class="theme-mode">/></span></div>
                     </div>
                 </div>
             </div>
