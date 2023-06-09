@@ -42,6 +42,15 @@ nav ul {
   gap: 20px;
 }
 
+nav > .menu-mobile {
+  display: none;
+}
+
+nav > .menu-mobile > img {
+  width: 30px;
+  cursor: pointer;
+}
+
 span {
   font-size: 1.5rem;
 }
@@ -292,6 +301,11 @@ a {
   height: 100%;
 }
 
+.hard-skills-container {
+  display: flex;
+  gap: 20px;
+}
+
 .icones-hard-skills {
   display: flex;
   align-items: center;
@@ -300,10 +314,6 @@ a {
 
 .icones-hard-skills > img {
   width: 50px;
-}
-
-.icones-hard-skills > img:hover {
-  transform: scale(1.1);
 }
 
 .code-tag > span {
@@ -624,6 +634,31 @@ span.cursor.typing {
   margin-bottom: 20px;
 }
 
+.filtro > input {
+  outline: none;
+  width: 20%;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 20px;
+  padding-left: 20px;
+  border: 1px solid var(--secundario);
+  color: var(--secundario);
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--cinza);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--brancos);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--secundario);  /* creates padding around scroll thumb */
+}
+
 @keyframes pulse-animation {
   0% {
     box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
@@ -651,6 +686,48 @@ span.cursor.typing {
   }
 }
 
+@media screen and (max-width: 1366px) {
+  .nome-titulo h2 {
+    font-size: 1.2em;
+  }
+
+  .nome-titulo .icone {
+    width: 13%;
+  }
+
+  .menu {
+    width: 40%;
+  }
+
+  .sub-container {
+    /* border: 1px solid blue; */
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px 1px var(--preto);
+    position: absolute;
+  }
+
+  .img-usuario {
+    /* border: 1px solid pink; */
+    width: 50%;
+    background-color: var(--branco);
+  }
+  
+  .img-usuario > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-secundario {
+    height: 85%;
+  }
+  
+  /* .menu > .modo > img {
+    width: 40px;
+    cursor: pointer;
+  } */
+}
 
 /* Tablet */
 @media screen and (min-width: 767px) and (max-width: 1023px) {
@@ -661,7 +738,83 @@ span.cursor.typing {
 
 /* Celular */
 @media screen and (max-width: 767px) {
-  .container-secundario {
-    border: 1px solid blue;
+  .container {
+    width: 100%;
+  }
+
+  .nome {
+    font-size: 1.3rem;
+  }
+
+  /* p {
+    font-size: 0.8rem;
+    line-height: 0.5cm;
+  } */
+
+  .informacoes {
+    flex-direction: column;
+  }
+
+  .informacoes-usuario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .informacoes img {
+    display: none;
+  }
+
+  .informacoes-usuario h1,
+  .informacoes-usuario span {
+    font-size: 1rem;
+  }
+
+  .sub-container {
+    width: 85%;
+  }
+
+  /* .botao-topo {
+    right: 100px;
+    width: 10%;
+  } */
+  .icones-hard-skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .code-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sobre {
+    height: 70%;
+  }
+
+  #sobre {
+    height: 120vh;
+  }
+
+  .section-1 {
+    height: 55vh;
+  }
+
+  .nome-titulo {
+    width: 100%;
+  }
+
+  .opcoes {
+    display: none;
+  }
+
+  nav > .menu-mobile {
+    display: block;
+  }
+
+  nav {
+    margin-bottom: 40px;
   }
 }
