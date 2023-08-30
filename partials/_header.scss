@@ -1,0 +1,128 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white-normal;
+    text-shadow: 0.1em 0.1em #333;
+
+    .menu-nav {
+        display: flex;
+        gap: 14px;
+
+        a {
+            display: inline-block;
+            color: $white-normal;
+        }
+
+        a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $white-normal;;
+            transition: width 0.3s;
+        }
+          
+        a:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+.profile {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    gap: 100px;
+    color: $white-normal;
+    
+    .foto-perfil {
+        img {
+            border-radius: 100%;
+            width: 300px;
+        }
+    }
+
+    .description-perfil {
+        text-shadow: 0.1em 0.1em #333;
+
+        h2 {
+            padding: 20px 0;
+        }
+
+        .social-media {
+            display: flex;
+            padding: 10px 0;
+            gap: 14px;
+            
+            i {
+                color: $white-normal;
+            }
+            
+            a:hover {
+                animation: translateY 0.8s infinite alternate;
+
+                i {
+                    color: $red-normal;
+                }
+            }
+        }
+    }
+}
+
+@keyframes translateY {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    
+    to {
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .menu-nav {
+            font-size: 15px;
+        }
+    }
+
+    .profile {
+        flex-direction: column;
+        gap: 0;
+        min-height: auto;
+
+        .foto-perfil {
+            img {
+                padding: 40px 0;
+                border-radius: 100%;
+                width: 150px;
+            }
+        }
+
+        .description-perfil {
+            text-align: center;
+
+            .social-media {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px 0;
+            }
+            
+            p {
+                font-size: 15px;
+            }
+
+            h2 {
+                padding-bottom: 14px;
+            }
+        }
+    }
+}

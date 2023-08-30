@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+@import "partials/colors";
+@import "partials/header";
+@import "partials/layout";
+
+body {
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header, section {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: $dark-normal;
+}
+
+p {
+    line-height: 150%;
+}
+
+img {
+    width: 100%;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    header, section {
+        min-height: auto;
+    }
+}
