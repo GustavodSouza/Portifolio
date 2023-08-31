@@ -3,7 +3,7 @@
     titulo: "Meus Gastos",
     github: "https://github.com/GustavodSouza/MeusGastos",
     site: "https://meus-gastos.vercel.app/",
-    img: "assets/meus-gastos.png",
+    img: "assets/meus-gastos2.png",
      descricao: "Projeto pessoal desenvolvido para controlar os gastos mensais. Neste projeto é possível registrar os gastos e fazer consultas obtendo o valor total por mês.",
     tecnologias: "Angular - Typescript - Scss - Firebase - Pwa",
   },
@@ -45,7 +45,7 @@ carregarProjetos = (filtrados) => {
 
         projeto = `
           <div class="projeto ${display}" data-aos="fade-up" data-aos-delay="350">
-            <img src="${item.img}" alt="Prévia do projeto" loading="lazy" />
+            <img class="imagem-projeto" src="${item.img}" alt="Prévia do projeto" loading="lazy" />
             <div class="description-projeto">
               <h2>${item.titulo}</h2>
               <p>${item.descricao}</p>

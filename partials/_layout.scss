@@ -25,10 +25,11 @@
 
 .about-me {
     background-image: linear-gradient(rgb(139, 179, 220), rgba(1, 90, 179, 0));
-    color: $white-normal;
+    line-height: 150%;
+    text-align: justify;
 
     .description-about {
-        padding: 100px 0;
+        padding: 30px 0;
 
         p {
             padding: 14px 0;
@@ -41,12 +42,9 @@
             gap: 20px;
             padding: 150px 0;
     
-            i {
+            i, span {
                 font-size: 50px;
-            }
-    
-            a:hover {
-                animation: translateY 0.8s infinite alternate;
+                cursor: default;
             }
         }
     }
@@ -122,6 +120,12 @@
             width: 150px;
             height: 30px;
             border-radius: 20px;
+            transition: ease-in-out 0.3s all;
+
+            &:hover {
+                background-color: $primary;
+                color: $white-normal;
+            }
         }
     }
 
@@ -165,10 +169,9 @@
     min-height: 20vh;
     color: $white-normal;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: column;
     padding: 10px 0;
-    gap: 40px;
 
     .contato {
         width: 100%;
@@ -182,7 +185,6 @@
     .direitos {
         display: flex;
         justify-content: center;
-        align-items: flex-end;
         
         p {
             font-size: 15px;
@@ -192,7 +194,6 @@
 
 .buttons {
     display: flex;
-    flex-direction: column;
 
     .btn-flutuante {
         position: fixed;
@@ -201,7 +202,7 @@
         z-index: 99;
 
         &.topo {
-            bottom: 100px;
+            right: 100px;
         }
     
         img {
@@ -231,6 +232,10 @@
             text-align: center;
             opacity: 0;
             transition: opacity 0.4s;
+
+            &.topo {
+                left: -200px;
+            }
         }
     }
 }
@@ -246,22 +251,25 @@
 }
 
 @media screen and (max-width: 768px) {
-    .description-about {
-        padding: 40px 0;
+    .about-me {
+        padding-top: 50px;
 
-        p {
-            text-align: justify;
-        }
+        .description-about {
 
-        .stacks-icons {
-            padding: 10px 0;
-
-            i {
-                font-size: 40px;
+            p {
+                text-align: justify;
+            }
+    
+            .stacks-icons {
+                padding: 10px 0;
+    
+                i {
+                    font-size: 40px;
+                }
             }
         }
     }
-
+    
     .projects {
         .pesquisa {
             padding: 40px 0;
@@ -296,8 +304,8 @@
     }
 
     .footer-description {
+        justify-content: space-between;
         flex-direction: column;
-        gap: 40px;
 
         .contato {
             justify-content: center;
@@ -318,7 +326,11 @@
 
     .btn-flutuante {
         img {
-            max-width: 50px;
+            max-width: 40px !important;
+        }
+
+        &.topo {
+            right: 70px !important;
         }
     }
 }

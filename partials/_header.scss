@@ -47,6 +47,7 @@
 
     .description-perfil {
         text-shadow: 0.1em 0.1em #333;
+        line-height: 150%;
 
         h2 {
             padding: 20px 0;
@@ -54,8 +55,8 @@
 
         .social-media {
             display: flex;
-            padding: 10px 0;
-            gap: 14px;
+            padding: 20px 0;
+            gap: 25px;
             
             i {
                 color: $white-normal;
