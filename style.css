@@ -63,9 +63,6 @@
 .profile .description-perfil .social-media a:hover {
   animation: translateY 0.8s infinite alternate;
 }
-.profile .description-perfil .social-media a:hover i {
-  color: #F00;
-}
 
 @keyframes translateY {
   from {
@@ -111,7 +108,6 @@
   }
 }
 .container {
-  max-width: 1440px;
   margin: 0 auto;
   padding: 0 10px;
 }

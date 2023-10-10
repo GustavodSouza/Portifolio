@@ -1,0 +1,26 @@
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      background-color: var(--secundario);
+    }
+    49% {
+      background-color: var(--secundario);
+    }
+    50% {
+      background-color: transparent;
+    }
+    99% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: var(--secundario);
+    }
+  }
