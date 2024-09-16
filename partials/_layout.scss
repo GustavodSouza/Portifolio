@@ -1,25 +1,6 @@
-.container {
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
 .bg-home {
-    position: relative;
-}
-
-.bg-home::before {
-    content: '';
-    display: block;
-    position: absolute;
-    background-image: linear-gradient(rgb(0, 61, 122), rgba(1, 90, 179, 0.507));
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.9;
+    background-color: #1a1822;
+    // height: 100vh;
 }
 
 .about-me {
@@ -33,15 +14,16 @@
         p {
             padding: 14px 0;
         }
-    
+
         .stacks-icons {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
             padding: 150px 0;
-    
-            i, span {
+
+            i,
+            span {
                 font-size: 50px;
                 cursor: default;
             }
@@ -66,7 +48,7 @@
         display: flex;
         gap: 14px;
         padding: 40px 0;
-        
+
 
         .description-projeto {
             display: flex;
@@ -184,7 +166,7 @@
     .direitos {
         display: flex;
         justify-content: center;
-        
+
         p {
             font-size: 15px;
         }
@@ -203,21 +185,21 @@
         &.topo {
             right: 100px;
         }
-    
+
         img {
             max-width: 74px;
             transition: transform 0.4s;
-            
+
             &:hover {
                 transform: scale(1.1);
             }
         }
-    
-        &:hover .tooltip-text{
+
+        &:hover .tooltip-text {
             visibility: visible;
             opacity: 1;
         }
-        
+
         .tooltip-text {
             visibility: hidden;
             position: absolute;
@@ -243,7 +225,7 @@
     from {
         transform: translateY(0) scale(1);
     }
-    
+
     to {
         transform: translateY(-8px) scale(1.1);
     }
@@ -258,21 +240,21 @@
             p {
                 text-align: justify;
             }
-    
+
             .stacks-icons {
                 padding: 10px 0;
-    
+
                 i {
                     font-size: 40px;
                 }
             }
         }
     }
-    
+
     .projects {
         .pesquisa {
             padding: 40px 0;
-    
+
             input {
                 width: 100%;
             }
@@ -295,10 +277,10 @@
     }
 
     .experience {
-       padding-bottom: 20px;
+        padding-bottom: 20px;
 
-    .experiencia {
-         max-width: 100%;
+        .experiencia {
+            max-width: 100%;
         }
     }
 
@@ -311,12 +293,12 @@
             align-items: center;
             flex-direction: column;
         }
-    
+
         .direitos {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            
+
             p {
                 font-size: 10px;
             }

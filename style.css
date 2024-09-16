@@ -3,6 +3,7 @@
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 .nav-bar {
@@ -32,38 +33,6 @@
   width: 100%;
 }
 
-.profile {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  gap: 100px;
-  color: #FFF;
-}
-.profile .foto-perfil img {
-  border-radius: 100%;
-  width: 300px;
-}
-.profile .description-perfil {
-  text-shadow: 0.1em 0.1em #333;
-  line-height: 150%;
-}
-.profile .description-perfil h2 {
-  padding: 20px 0;
-}
-.profile .description-perfil .social-media {
-  display: flex;
-  padding: 20px 0;
-  gap: 25px;
-}
-.profile .description-perfil .social-media i {
-  color: #FFF;
-}
-.profile .description-perfil .social-media a:hover {
-  animation: translateY 0.8s infinite alternate;
-}
-
 @keyframes translateY {
   from {
     transform: translateY(0) scale(1);
@@ -81,54 +50,9 @@
   .nav-bar .menu-nav {
     font-size: 15px;
   }
-  .profile {
-    flex-direction: column;
-    gap: 0;
-    min-height: auto;
-  }
-  .profile .foto-perfil img {
-    padding: 40px 0;
-    border-radius: 100%;
-    width: 150px;
-  }
-  .profile .description-perfil {
-    text-align: center;
-  }
-  .profile .description-perfil .social-media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-  }
-  .profile .description-perfil p {
-    font-size: 15px;
-  }
-  .profile .description-perfil h2 {
-    padding-bottom: 14px;
-  }
 }
-.container {
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
 .bg-home {
-  position: relative;
-}
-
-.bg-home::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-image: linear-gradient(rgb(0, 61, 122), rgba(1, 90, 179, 0.507));
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.9;
+  background-color: #1a1822;
 }
 
 .about-me {
@@ -149,7 +73,8 @@
   gap: 20px;
   padding: 150px 0;
 }
-.about-me .description-about .stacks-icons i, .about-me .description-about .stacks-icons span {
+.about-me .description-about .stacks-icons i,
+.about-me .description-about .stacks-icons span {
   font-size: 50px;
   cursor: default;
 }
@@ -379,48 +304,5 @@
   }
   .btn-flutuante.topo {
     right: 70px !important;
-  }
-}
-body {
-  font-family: "Sora", sans-serif;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-header, section {
-  min-height: 100vh;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-p {
-  line-height: 150%;
-}
-
-img {
-  width: 100%;
-}
-
-input, button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-button {
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  header, section {
-    min-height: auto;
   }
 }/*# sourceMappingURL=style.css.map */
