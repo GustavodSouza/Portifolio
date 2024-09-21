@@ -16,30 +16,6 @@ let projetos = [
       "Projeto realizado com a finalidade de aprender React. Nele é possível armazenar uma lista de tarefas, sendo possível adicionar, marcar como feita e excluir.",
     tecnologias: "React - Javascript",
   },
-  {
-    titulo: "Portifólio",
-    github: "https://github.com/GustavodSouza/Portifolio.git",
-    site: "https://gustavosouzaportifolio.vercel.app/",
-    img: "assets/portifolio.png",
-    descricao: "Portifólio criado para mostrar meus principais projetos construídos no decorrer da minha carreira como programador.",
-    tecnologias: "Html - Css - Javascript",
-  },
-  {
-    titulo: "Portifólio",
-    github: "https://github.com/GustavodSouza/Portifolio.git",
-    site: "https://gustavosouzaportifolio.vercel.app/",
-    img: "assets/portifolio.png",
-    descricao: "Portifólio criado para mostrar meus principais projetos construídos no decorrer da minha carreira como programador.",
-    tecnologias: "Html - Css - Javascript",
-  },
-  {
-    titulo: "Portifólio",
-    github: "https://github.com/GustavodSouza/Portifolio.git",
-    site: "https://gustavosouzaportifolio.vercel.app/",
-    img: "assets/portifolio.png",
-    descricao: "Portifólio criado para mostrar meus principais projetos construídos no decorrer da minha carreira como programador.",
-    tecnologias: "Html - Css - Javascript",
-  },
 ];
 
 let click = false;
@@ -57,20 +33,20 @@ carregarProjetos = (filtrados) => {
       const display = index > 3 ? "hidden" : "show"
 
       card.innerHTML += `
-        <div class="col-md-5 col-sm-12 ${display}" style="border: 1px solid white;">
+        <div class="col-md-5 col-sm-12 ${display} cards" style="border: 1px solid white; border-radius: 5px">
             <div class="column">
                 <img style="width: 100%; height: 300px" class="imagem-projeto" src="${item.img}" alt="Prévia do projeto" loading="lazy" />
                 <p class="h4 text-center">${item.titulo}</p>
                 <p>${item.descricao}</p>
                 <strong>${item.tecnologias}</strong>
-                <div class="pt-3">
-                   <a href="${item.github}" target="_blank">
+                <div class="d-flex justify-content-center py-3 gap-4">
+                   <a data-toggle="tooltip" data-placement="top" title="Visualizar Repositório" class="buttons-card" href="${item.github}" target="_blank">
                        Repositório
-                       <i class="fa-brands fa-github"></i>
+                       <i class="fa-brands fa-github icon"></i>
                    </a>
-                   <a href="${item.site}" target="_blank">
+                   <a data-toggle="tooltip" data-placement="top" title="Visualizar Projeto" class="buttons-card" href="${item.site}" target="_blank">
                        Visitar projeto
-                       <i class="fa-solid fa-eye"></i>
+                       <i class="fa-solid fa-eye icon"></i>
                    </a>
                </div>
             </div>
